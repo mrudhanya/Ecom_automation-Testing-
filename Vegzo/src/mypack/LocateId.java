@@ -1,9 +1,14 @@
 package mypack;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LocateId {
 
@@ -52,50 +57,92 @@ public class LocateId {
            //headerLogo.click();
            
            
-            // Locate the Navigation Menu items
+           
+           
+           // Locate the Navigation Menu items
             
-           WebElement homeNav = driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[1]/a"));
+			
+			
+			WebElement homeNav =
+			  driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[1]/a"));
+			  
+			WebElement orgatmaNav =
+			  driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[2]/a")); 
+			  orgatmaNav.click();
+			  
+			  Thread.sleep(2000);
+			  
+			WebElement leafyVegetablesNav =
+			  driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[3]/a")); 
+			  leafyVegetablesNav.click();
+			  
+			  Thread.sleep(2000);
+			  
+			WebElement fruitsNav =
+			  driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[4]/a")); 
+			  fruitsNav.click();
+			  
+			  Thread.sleep(2000);
+			  
+			WebElement aboutUsNav =
+			  driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[5]/a")); 
+			  aboutUsNav.click();
+			  
+			  Thread.sleep(2000);
+			  
+			WebElement contactNav =
+			  driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[6]/a")); 
+			  contactNav.click();
+			  
+			  Thread.sleep(2000); headerLogo =
+			  driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/nav/a/img"));
+			  headerLogo.click();
+			 
+			 
            
-           WebElement orgatmaNav = driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[2]/a"));
-           orgatmaNav.click();
+			
+			WebElement productcategory = driver.findElement(By.xpath("/html/body/section/div[3]/div/div/div/div/div[2]/div/div[1]/div/div/a/div/img")); 
+			  productcategory.click(); 
+			  Thread.sleep(2000); 
+			  headerLogo =driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/nav/a/img"));
+			  headerLogo.click();
+			  
+			  productcategory = driver.findElement(By.xpath("/html/body/section/div[3]/div/div/div/div/div[2]/div/div[2]/div/div/a/div/img")); 
+			  productcategory.click(); Thread.sleep(2000); 
+			  headerLogo =driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/nav/a/img"));
+			  headerLogo.click();
+			  
+			  productcategory = driver.findElement(By.xpath("/html/body/section/div[3]/div/div/div/div/div[2]/div/div[3]/div/div/a/div/img")); 
+			  productcategory.click(); Thread.sleep(2000); 
+			  headerLogo = driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/nav/a/img"));
+			  headerLogo.click();
+			 
+       
+           WebElement seemore = driver.findElement(By.xpath("/html/body/section/div[4]/div/div/div/div/div[1]/a"));
+           seemore.click();
            
-           Thread.sleep(2000);
-            
-           WebElement leafyVegetablesNav = driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[3]/a"));
-           leafyVegetablesNav.click();
-           
-           Thread.sleep(2000);
-           
-           WebElement fruitsNav = driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[4]/a"));
-           fruitsNav.click();
-           
-           Thread.sleep(2000);
-           
-           WebElement aboutUsNav = driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[5]/a"));
-           aboutUsNav.click();
-           
-           Thread.sleep(2000);
-           
-           WebElement contactNav = driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/div/div/ul/li[6]/a"));
-           contactNav.click();
-           
-           Thread.sleep(2000);
-           headerLogo = driver.findElement(By.xpath("//*[@id=\"cus_site_header\"]/nav/a/img"));
-           headerLogo.click();
-           
-            // Printing the elements to verify they are located
-            System.out.println("Header Logo: " + headerLogo);
-            System.out.println("Location Display: " + locationDisplay);
-            System.out.println("Search Bar: " + searchBar);
-            //System.out.println("Login Button: " + loginButton);
-            System.out.println("Cart Button: " + cartButton);
-            System.out.println("Home Nav: " + homeNav);
-            System.out.println("Orgatma Nav: " + orgatmaNav);
-            System.out.println("Leafy Vegetables Nav: " + leafyVegetablesNav);
-            System.out.println("Fruits Nav: " + fruitsNav);
-            System.out.println("About Us Nav: " + aboutUsNav);
-            System.out.println("Contact Nav: " + contactNav);
+        
 
+           
+           
+           
+           
+			
+			  // Printing the elements to verify they are located
+			  System.out.println("Header Logo: " + headerLogo);
+			  System.out.println("Location Display: " + locationDisplay);
+			  System.out.println("Search Bar: " + searchBar);
+			  //System.out.println("Login Button: " + loginButton);
+			  //System.out.println("Cart Button: " + cartButton);
+			  System.out.println("Home Nav: " + homeNav);
+			  System.out.println("Orgatma Nav: " + orgatmaNav);
+			  System.out.println("Leafy Vegetables Nav: " + leafyVegetablesNav);
+			  System.out.println("Fruits Nav: " + fruitsNav);
+			  System.out.println("About Us Nav: " + aboutUsNav);
+			  System.out.println("Contact Nav: " + contactNav);
+			  System.out.println("productcategory:" + productcategory );
+			  System.out.println("seemore:" + seemore);
+           
         } finally {
             // Close the browser after a delay to see the result
             try {
