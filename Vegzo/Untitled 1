@@ -1,0 +1,71 @@
+
+           // Scroll down to the product category section
+           JavascriptExecutor js = (JavascriptExecutor) driver;
+           js.executeScript("window.scrollBy(0,500)");
+
+           // Wait for 2 seconds
+           Thread.sleep(4000);
+
+           // Locate the first product by its unique identifier
+           WebElement firstProduct = driver.findElement(By.xpath("/html/body/section/div[4]/div/div/div/div/div[2]/div/div/div[8]/div/div/div/a/img"));
+
+           // Scroll to the product to ensure it's in view
+           js.executeScript("arguments[0].scrollIntoView(true);", firstProduct);
+
+           // Wait until the product is visible and clickable
+           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+           wait.until(ExpectedConditions.elementToBeClickable(firstProduct));
+
+           // Click on the first product
+           firstProduct.click();
+
+           // Wait for the product page to load
+           Thread.sleep(2000);
+
+           // Scroll down to the product list
+           js.executeScript("window.scrollBy(0,400)");
+
+           // Wait for 2 seconds
+           Thread.sleep(2000);
+
+           // Locate and click the add to cart button for the first product in the list
+           WebElement addToCartButton = driver.findElement(By.xpath("/html/body/section/div[4]/div/div/div/div/div[2]/div/div/div[8]/div/div/div/div/div/a[2]"));
+           addToCartButton.click();
+
+           // Wait for the action to complete
+           Thread.sleep(2000);
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+             // Locate and click "My Account" in Customer Service, then click cancel button
+            WebElement myAccount = driver.findElement(By.xpath("//footer//div[contains(text(), 'Customer Service')]/following-sibling::ul//a[text()='My Account']"));
+            myAccount.click();
+            WebElement cancelBtn = driver.findElement(By.xpath("//button[text()='Cancel']"));
+            cancelBtn.click();
+            clickheaderLogo.run();
+            scrollToFooter.run();
+
+            // Locate and click "Order History" in Customer Service
+            WebElement orderHistory = driver.findElement(By.xpath("//footer//div[contains(text(), 'Customer Service')]/following-sibling::ul//a[text()='Order History']"));
+            orderHistory.click();
+            clickheaderLogo.run();
+            scrollToFooter.run();
+
+            // Locate and click "Cart" in Customer Service
+            WebElement cart = driver.findElement(By.xpath("//footer//div[contains(text(), 'Customer Service')]/following-sibling::ul//a[text()='Cart']"));
+            cart.click();
+            clickheaderLogo.run();
+            scrollToFooter.run();
